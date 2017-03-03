@@ -46,7 +46,7 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <a href="" class="pull-right btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Download</a>
+      <a href="https://github.com/boggyjan/box4.js" target="_blank" class="pull-right btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Download</a>
       <h1>
         Box4.js Demo
         <small>Resizeable 2x2 grid</small>
@@ -66,7 +66,7 @@
       <div class="box4-box left top">
         <div class="box-title">HTML</div>
         <pre class="prettyprint">
-&lt;div class="box4 demo"&gt;
+&lt;div class="box4 demo3"&gt;
   &lt;div class="box4-box left top">left top content&lt;/div&gt;
   &lt;div class="box4-box right top">right top content&lt;/div&gt;
   &lt;div class="box4-box left bottom">left bottom content&lt;/div&gt;
@@ -90,12 +90,12 @@ h2 {
       <div class="box4-box left bottom">
         <div class="box-title">JS</div>
         <pre class="prettyprint">
-(function (window, document, $, undefined) {
-
-  'use strict';
+$(function(){
+  
+  // add this line to your JavaScript
   $('.box4').box4();
 
-} (window, document, jQuery));
+});
         </pre>
       </div>
       <div class="box4-box right bottom">
