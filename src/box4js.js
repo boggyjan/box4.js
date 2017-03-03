@@ -23,27 +23,31 @@
         .on('mousedown', function(e) {
           let target = $(e.target);
 
-          if (target.hasClass('box4-handler')) resizeType = target.data('direction');
-          e.preventDefault();
+          if (target.hasClass('box4-handler')) {
+            resizeType = target.data('direction');
+            e.preventDefault();
+            e.stopPropagation();
+          }
         })
         .find(handler.c)
         .on('dblclick', function(e){
           horizontalPercentage = verticalPercentage = 50;
           redraw();
           e.preventDefault();
+          e.stopPropagation();
         });
         
         $(document)
         .on('mouseup', function(e) {
           resizeType = null;
-          e.preventDefault();
         })
         .on('mousemove', function(e) {
           
           if (!resizeType) return;
 
           let c = container.get(0);
-          let [mouseX, mouseY] = [e.pageX - c.offsetLeft, e.pageY - c.offsetTop];
+          let r = c.getBoundingClientRect();
+          let [mouseX, mouseY] = [e.pageX - r.left - window.scrollX, e.pageY - r.top - window.scrollY];
 
           switch (resizeType) {
             case 'vertical':
@@ -62,19 +66,20 @@
 
           redraw();
           e.preventDefault();
+          e.stopPropagation();
         });
 
         redraw();
       }
 
       function redraw() {
-        container.find('.box4-box.left').each((i,t)=>t.style.width = horizontalPercentage + '%');
-        container.find('.box4-box.right').each((i,t)=>t.style.width = (100 - horizontalPercentage) + '%');
-        container.find('.box4-box.top').each((i,t)=>t.style.height = verticalPercentage + '%');
-        container.find('.box4-box.bottom').each((i,t)=>t.style.height = (100 - verticalPercentage) + '%');
-        container.find('.box4-handler[data-direction=horizontal]').each((i,t) => t.style.top = verticalPercentage + '%');
-        container.find('.box4-handler[data-direction=vertical]').each((i,t) => t.style.left = horizontalPercentage + '%');
-        container.find('.box4-handler[data-direction=center]').each((i,t) => {
+        container.find('>.box4-box.left').each((i,t)=>t.style.width = horizontalPercentage + '%');
+        container.find('>.box4-box.right').each((i,t)=>t.style.width = (100 - horizontalPercentage) + '%');
+        container.find('>.box4-box.top').each((i,t)=>t.style.height = verticalPercentage + '%');
+        container.find('>.box4-box.bottom').each((i,t)=>t.style.height = (100 - verticalPercentage) + '%');
+        container.find('>.box4-handler[data-direction=horizontal]').each((i,t) => t.style.top = verticalPercentage + '%');
+        container.find('>.box4-handler[data-direction=vertical]').each((i,t) => t.style.left = horizontalPercentage + '%');
+        container.find('>.box4-handler[data-direction=center]').each((i,t) => {
           t.style.top = verticalPercentage + '%';
           t.style.left = horizontalPercentage + '%';
         });
