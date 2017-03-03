@@ -6,70 +6,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
   <title>Box4.js - Resizeable 2x2 grid.</title>
-
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
   <!-- include box4.js CSS -->
   <link rel="stylesheet" href="../dist/box4js.min.css">
 
   <style>
     .box4 {
       height: 500px;
-      margin: 100px;
+    }
+
+    .box4.demo3 {
+      margin: 10px;
+      height: 200px;
+    }
+
+    .box4.demo2 > .box4-box {
+      padding: 30px 10px 10px 10px;
+    }
+      
+      .box4-box .box-title {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+      }
+
+      .box4-box .prettyprint {
+        width: 100%;
+        height: 100%;
+      }
+
+    .footer {
+      margin: 50px 0;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="page-header">
+      <a href="" class="pull-right btn btn-danger"><i class="glyphicon glyphicon-cloud-download"></i> Download</a>
+      <h1>
+        Box4.js Demo
+        <small>Resizeable 2x2 grid</small>
+      </h1>
+    </div>
+    
+    <h3>Move the pointer to the grid line and drag it</h3>
+    <div class="box4 demo1">
+      <div class="box4-box left top">left top content</div>
+      <div class="box4-box right top">right top content</div>
+      <div class="box4-box left bottom">left bottom content</div>
+      <div class="box4-box right bottom">right bottom content</div>
+    </div>
+    
+    <h3>Usage</h3>
+    <div class="box4 demo2">
+      <div class="box4-box left top">
+        <div class="box-title">HTML</div>
+        <pre class="prettyprint">
+&lt;div class="box4 demo"&gt;
+  &lt;div class="box4-box left top">left top content&lt;/div&gt;
+  &lt;div class="box4-box right top">right top content&lt;/div&gt;
+  &lt;div class="box4-box left bottom">left bottom content&lt;/div&gt;
+  &lt;div class="box4-box right bottom">right bottom content&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+      </div>
+      <div class="box4-box right top">
+        <div class="box-title">CSS</div>
+        <pre class="prettyprint">
+h2 {
+  color: #999;
+}
+
+.box4.demo {
+  margin: 10px;
+  height: 100%;
+}
+        </pre>
+      </div>
+      <div class="box4-box left bottom">
+        <div class="box-title">JS</div>
+        <pre class="prettyprint">
+(function (window, document, $, undefined) {
+
+  'use strict';
+  $('.box4').box4();
+
+} (window, document, jQuery));
+        </pre>
+      </div>
+      <div class="box4-box right bottom">
+        <div class="box-title">PREVIEW</div>
+        <div class="box4 demo3">
+          <div class="box4-box left top">left top content</div>
+          <div class="box4-box right top">right top content</div>
+          <div class="box4-box left bottom">left bottom content</div>
+          <div class="box4-box right bottom">right bottom content</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      Copyright © 2017 Boggy Jang. All rights reserved.
+    </div>
+  </div>
   
-  <h1>
-    Box4.js Demo
-    <small>Resizeable 2x2 grid</small>
-  </h1>
-  <p>Move the pointer to the rulers and drag it.</p>
-
-  <div class="box4">
-    <div class="box4-box left top">left top content</div>
-    <div class="box4-box right top">right top content</div>
-    <div class="box4-box left bottom">left bottom content</div>
-    <div class="box4-box right bottom">right bottom content</div>
-  </div>
-
-  <div class="box4">
-    <div class="box4-box left top">
-      <h2>醫別意越中德</h2>
-      <p>可青利從單的電積。和難方氣點著民起，死緊不的只的結，受知她，願設又二聲害集。行寫小不失目觀演年還念就用角兒們的中東又決球關！</p>
-      <p>動起來兒打家也位當導力水路果觀道他：許土家集後內待：展天都打大。</p>
-      <p>這而國明消；常經不同縣從是民會大。些他中大改大後，示示實光系手無師，子社感價局有我。點也母任光任山氣種？</p>
-      <p>件要像就於界不此天。比家能光四強與從強離了向自音李參們陸的心黨然。化而業新化觀滿而以的，心了國常感等會中風大飛明會急有實模進、何遠生親是能今起我到現告力：種樂記道個幾？最正廣；們人兒有首結再女下麼級總校年言邊人舉電列口終動？</p>
-      <p>中的中的：為來實滿新關本國通開生筆器利料人家科了半化的樹有！學上於突不活家裡團般高中點總次一地。行己先科增望新、己體際和一為片就物父同如做到行無真天化，學張紅自母有友價研檢民流決體？有空正白們、意兒後，度調北哥時；場其有，不考道眾再東為通不決險制眼沒了歡復門世的我此際灣在，金品女行急行這中時護機力領來！</p>
-    </div>
-    <div class="box4-box right top">
-      <h2>乎毛他保車民決氣音報</h2>
-      <p>度新人麗設星一花我。</p>
-      <p>局假因個情力主童想庭注美小為灣作色上點，的醫次對不愛，行利錢人影性灣及沒，度色臺嚴或這人分的各成之器縣小我到景這元在一評動話？了能示息道改維亞。工家什而背且化興叫是，那列們之速研性學你草信後東，速是愛動，醫還給都為係在化課雖，合直們好的或參到由，查神陽沒路把西很關路師參，物活關話南當。企在戲生以起只有汽這體名吃；公一四、公無十價意向看全的品女地醫有。可這果行愛政裡離……親易希我？</p>
-      <p>中雨縣神數那，臺且想更包。了際素；政先你外使已興以很教教為電我面畫破字斯。朋機正有次一：服腳打，一球行一高夠出活子之種消首們是也在前象字們成卻：水流的的內型的；球然音待出古來爸聞的家兩我感雙個軍的曾假和親希難維他廣去輕興，把發眼好長開大度無學用的一不。打城音銷前萬們比雖溫那的況一層家，義學入。了與港，論一爾灣過力種什……處設務計觀深看爾錯動發，簡位易我里經道？克朋聲北報。度電失出。時子觀……書花過發死。多影此積何之了時：與克謝歷體點回，說爸通多雙也時間卻不足們樣馬樹參我開！</p>
-    </div>
-    <div class="box4-box left bottom">
-      <h2>示四防論而不會中十初日</h2>
-      <p>護心為魚起；說吸利公多依爾，現言更場，局雨期士界備灣。在士她不著星自。</p>
-      <p>收臺多有建港主多隊和統，到排邊險我病。來定且創國點不報了只兒得了，於這高來參就人由單士火克多過；新事共直住？創中由高時的收現紀喜蘭：著簡是非成。機念有教書調以出告和想會土竟。美表。</p>
-      <p>代年現花，子終人鄉我，地王不飛由過得負小型球球，一古有回我我總日果然們部都構來展上往！認兩下西臺時組間手山內把方了拉詩當人？</p>
-      <p>代那是口長。</p>
-      <p>歡得開；這原著產，何始靈關每色話眼；在以不歌子求會的；年未己的最一然畫賽雜；他則手本。們省或他為老、人行小也不四少？工斷上盡一景感加系來由放達道不……準長取畫樂什組各病總識常謝入知立濟眼己臺才是如事錯果時一修看問過顧中：度影爸系登熱已小定實大痛更眼觀義點……國是客它時歷依至。舞歡神麼們物國證……北未實直！天令下單把才案……多學使通未。</p>
-      <p>子達樂起平這白品，我代他形、主空長收間我體利排已史力新；表天現調女一造印國場到可起場生一員告得底河清野微能名應對活陸急爸心說們後或中張大記？</p>
-    </div>
-    <div class="box4-box right bottom">
-      <h2>生失而她家車轉河此學色照明養</h2>
-      <p>天年才；不收深大！</p>
-      <p>成畫沒？後約能狀子都……先特這使異重白一學業己車算；集青指相，四北治格龍些合；石從展家也克觀年十開上落藝故法清足樂病是率為此放且不管！怎始人春推政人大興合故研說家？留的著羅進子日但法雨臺往裡小國人起參玩有年賽發性票教華物相……古星讀、代媽又總無以，再關國書越意用想這火現地遊響福展優。</p>
-      <p>起我問天；家小我印是將觀日？</p>
-      <p>開認阿外活來體多該方來，室集告難日來回足中身治大作。呢女門，種兒養型看果麼夜人一，來點沒黑香過呢多物小臺清我運非斷等去邊始防過以將示市叫另張少女好我這以同洋魚！因後統金代民筆灣漸的平心一，型看現電去大。維問士己？示球過理就商坡計的易，銀樣合場會院價現高老視，自服突房道我走來們這在國本早決如不麼護會權二國記無會，道民嚴名成我高不法財戰。</p>
-      <p>出會毛話去政的元麼先可無現應。</p>
-      <p>是目愛邊。</p>
-      <p>參覺考麼樣人；轉不總你望：推離生生大！食生同結老在字卻本人的笑聽常看母方。異四片我無：容文裡說影……縣報們覺更得升對是跟地師。</p>
-    </div>
-  </div>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   <!-- include box4.js JS -->
   <script src="../dist/box4js.min.js"></script>
   
