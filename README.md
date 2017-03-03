@@ -1,6 +1,6 @@
 # Box4.js
 
-#### Resizeable 2x2 grid
+#### Resizable 2x2 grid
 
 ### Usage
 
