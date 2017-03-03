@@ -5,12 +5,16 @@
   'use strict';
 
   $.fn.box4 = function () {
+    var h = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 50;
+    var v = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
+
     return this.each(function () {
 
-      var verticalPercentage = 50;
-      var horizontalPercentage = 50;
+      var horizontalPercentage = h;
+      var verticalPercentage = v;
       var resizeType = null;
       var container = $(this);
+      console.log(horizontalPercentage, verticalPercentage);
 
       function init() {
 
