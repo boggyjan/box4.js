@@ -24,7 +24,7 @@
           c: $('<div class="box4-handler" data-direction="center"></div>')
         };
 
-        container.append(handler.v, handler.h, handler.c).on('mousedown', function (e) {
+        container.append(handler.v, handler.h, handler.c).on('mousedown touchstart', function (e) {
           var target = $(e.target);
 
           if (target.hasClass('box4-handler')) {
@@ -39,9 +39,9 @@
           e.stopPropagation();
         });
 
-        $(document).on('mouseup', function (e) {
+        $(document).on('mouseup touchend', function (e) {
           resizeType = null;
-        }).on('mousemove', function (e) {
+        }).on('mousemove touchmove', function (e) {
 
           if (!resizeType) return;
 

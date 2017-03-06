@@ -21,7 +21,7 @@
         
         container
         .append(handler.v, handler.h, handler.c)
-        .on('mousedown', function(e) {
+        .on('mousedown touchstart', function(e) {
           let target = $(e.target);
 
           if (target.hasClass('box4-handler')) {
@@ -39,10 +39,10 @@
         });
         
         $(document)
-        .on('mouseup', function(e) {
+        .on('mouseup touchend', function(e) {
           resizeType = null;
         })
-        .on('mousemove', function(e) {
+        .on('mousemove touchmove', function(e) {
           
           if (!resizeType) return;
 
