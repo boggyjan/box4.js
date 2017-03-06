@@ -21,7 +21,9 @@ $(function(){
 
 ## Options
 You can custom percentage numbers for vertical and horizontal grid size by fill v and h params. $('.box4').box4(v, h);
-ex: $('.box4').box4(20, 60);
+```javascript
+$('.box4').box4(20, 60);
+```
 
 ## Demo
 Click [here](https://boggyjan.github.io/box4.js/test/) for a demo and to see how to use it.
