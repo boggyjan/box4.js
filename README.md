@@ -20,7 +20,7 @@ $(function(){
 ```
 
 ## Options
-You can custom percentage numbers for vertical and horizontal grid size by fill v and h params. $('.box4').box4(v, h);
+You can custom percentage numbers for vertical and horizontal grid size by v and h param. $('.box4').box4(v, h);
 ```javascript
 $('.box4').box4(20, 60);
 ```
